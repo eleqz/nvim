@@ -16,11 +16,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
-    rocks = {
-        enabled = false,
-    },
+  rocks = {
+    enabled = false,
+  },
 })
 require("config.options")
 require("config.keymaps")
 require("config.lsp")
-
