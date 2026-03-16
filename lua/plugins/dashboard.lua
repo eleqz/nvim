@@ -5,15 +5,28 @@ return {
     require("dashboard").setup({
       theme = "hyper",
       config = {
-        week_header = { enable = true },
         shortcut = {
           {
-            desc = "Files",
+            desc = "󰱼 Find Files",
+            group = "Label",
             key = "f",
-            action = "lua MiniPick.builtin.files()",
+            action = "lua require('fzf-lua').files()",
           },
           {
-            desc = "Quit",
+            desc = "󰺮 Live Grep",
+            group = "Label",
+            key = "g",
+            action = "lua require('fzf-lua').live_grep()",
+          },
+          {
+            desc = "󰋚 Recent Files",
+            group = "Label",
+            key = "r",
+            action = "lua require('fzf-lua').oldfiles()",
+          },
+          {
+            desc = "󰗼 Quit",
+            group = "Label",
             key = "q",
             action = "qa",
           },
