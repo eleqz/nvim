@@ -20,6 +20,4 @@ require("lazy").setup("plugins", {
     enabled = false,
   },
 })
-require("config.options")
-require("config.keymaps")
 require("config.lsp")

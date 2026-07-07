@@ -3,7 +3,7 @@ local mason_lsp = require("mason-lspconfig")
 local k = vim.keymap
 
 mason.setup()
-mason_lsp.setup({ ensure_installed = { "lua_ls", "bashls", "tinymist" } })
+mason_lsp.setup({ ensure_installed = { "lua_ls", "bashls", "rust-analyzer", "tinymist" } })
 
 local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -30,6 +30,10 @@ vim.lsp.enable('lua_ls')
 -- Bash
 vim.lsp.config('bashls', { on_attach = on_attach })
 vim.lsp.enable('bashls')
+
+-- Rust
+vim.lsp.config('rust_analyzer', { on_attach = on_attach })
+vim.lsp.enable('rust_analyzer')
 
 -- TinyMist
 vim.lsp.config('tinymist', { on_attach = on_attach })
